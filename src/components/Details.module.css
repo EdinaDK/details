@@ -1,0 +1,14 @@
+.link {
+    color: #1d1d69;
+    text-decoration: underline;
+}
+
+.details {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline;
+    font-family: "Century Gothic";
+    font-size: 20pt;
+}
