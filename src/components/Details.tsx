@@ -8,27 +8,13 @@ type DetailsProps = {
 }
 
 export function Details({shortText, text}: DetailsProps) {
-    const [show, setShow] = useState(true);
-    const [link, setLink] = useState('подробнее');
-    const [det, setDet] = useState(' ');
+    const [show, setShow] = useState(false);
 
-    function submitHandler({e}: { e: any }) {
-        if (!show) {
-            setShow(true)
-            setLink('подробнее');
-            setDet(' ');
-
-        } else {
-            setShow(false);
-            setLink('скрыть');
-            setDet(text);
-        }
-    }
 
     return <div className={styles.details}>
-        <text>{shortText}
-            <text>{det}</text>
-            <span className={styles.link} onClick={(e) => submitHandler({e: e})}>{link}</span>
+        <text><b>{shortText}</b>
+            <text>{show ? text: ''}</text>
+            <span className={styles.link} onClick={() => setShow(!show)}>{show ? 'скрыть' : ' подробнее'}</span>
         </text>
     </div>;
 }
